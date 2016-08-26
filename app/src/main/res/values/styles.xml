@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TabItemStyle">
+        <item name="com.ccjoin.jmumall:contentTextSize">@dimen/tab_text_size</item>
+        <item name="com.ccjoin.jmumall:contentLogoSize">@dimen/tab_logo_size</item>
+        <item name="com.ccjoin.jmumall:contentTextColor">@color/text_gray_color</item>
+    </style>
+
+</resources>

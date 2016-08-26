@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tabItem="http://schemas.android.com/apk/res/com.ccjoin.jmumall"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_bg7"
+    android:orientation="horizontal"
+    android:paddingBottom="3dp"
+    android:paddingTop="5dp">
+
+    <com.ccjoin.jmumall.widget.TabItemView
+        style="@style/TabItemStyle"
+        android:id="@+id/tab_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        tabItem:contentLogoBack="@drawable/main_tab_home_selector"
+        tabItem:contentTextString="@string/tab_mall_home"/>
+
+    <com.ccjoin.jmumall.widget.TabItemView
+        style="@style/TabItemStyle"
+        android:id="@+id/tab_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        tabItem:contentLogoBack="@drawable/main_tab_category_selector"
+        tabItem:contentTextString="@string/tab_mall_category"/>
+
+    <com.ccjoin.jmumall.widget.TabItemView
+        style="@style/TabItemStyle"
+        android:id="@+id/tab_cart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        tabItem:contentLogoBack="@drawable/main_tab_cart_selector"
+        tabItem:contentTextString="@string/tab_mall_cart"/>
+
+    <com.ccjoin.jmumall.widget.TabItemView
+        style="@style/TabItemStyle"
+        android:id="@+id/tab_me"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        tabItem:contentLogoBack="@drawable/main_tab_me_selector"
+        tabItem:contentTextString="@string/tab_mall_me"/>
+
+</LinearLayout>
