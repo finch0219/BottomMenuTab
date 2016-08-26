@@ -1,3 +1,3 @@
 # BottomMenuTab
 This is a ViewPager implementation to manage the bottom menu example.
-<p>![](https://github.com/finch0219/BottomMenuTab/blob/master/ViewPagerMenu.gif)</p>
+<p>![](http://huntou.com/wp-content/uploads/2014/06/qcmm-1.jpg)</p>
