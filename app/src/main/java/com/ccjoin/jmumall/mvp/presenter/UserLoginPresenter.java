@@ -16,7 +16,7 @@ public class UserLoginPresenter {
 
     private IUserBiz userBiz;
     /** 注入View层需要实现的接口 */
-    private IUserLoginView userLoginView;
+    private IUserLoginView  userLoginView;
     private Handler mHandler = new Handler();
 
 
