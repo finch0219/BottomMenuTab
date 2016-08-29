@@ -1,6 +1,6 @@
 package com.ccjoin.jmumall.interfaces;
 
-import com.ccjoin.jmumall.entity.User;
+import com.ccjoin.jmumall.mvp.model.User;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

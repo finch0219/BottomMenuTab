@@ -1,4 +1,4 @@
-package com.ccjoin.jmumall.fragment;
+package com.ccjoin.jmumall.ui.fragment;
 
 
 import android.os.Bundle;
@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import com.ccjoin.jmumall.R;
 
 /**
- * Me tab
+ * Shopping cart tab
  */
-public class TabMeFragment extends Fragment {
+public class TabShoppingCartFragment extends Fragment {
 
 
-    public TabMeFragment() {
+    public TabShoppingCartFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class TabMeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_me, container, false);
+        return inflater.inflate(R.layout.fragment_tab_shopping_cart, container, false);
     }
 
 }

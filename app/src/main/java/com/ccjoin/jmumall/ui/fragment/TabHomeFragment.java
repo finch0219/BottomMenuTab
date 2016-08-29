@@ -1,4 +1,4 @@
-package com.ccjoin.jmumall.fragment;
+package com.ccjoin.jmumall.ui.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import com.ccjoin.jmumall.R;
-import com.ccjoin.jmumall.entity.User;
+import com.ccjoin.jmumall.mvp.model.User;
 import com.ccjoin.jmumall.interfaces.GitHubAPI;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -48,7 +48,9 @@ public class TabHomeFragment extends Fragment {
 
     @OnClick(R.id.btn_getUserInfo)
     public void onAction() {
+
         sendGetUserInfoRequest();
+
     }
 
 

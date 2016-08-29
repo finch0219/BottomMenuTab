@@ -1,7 +1,7 @@
-package com.ccjoin.jmumall.fragment;
-
+package com.ccjoin.jmumall.ui.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +10,13 @@ import android.view.ViewGroup;
 import com.ccjoin.jmumall.R;
 
 /**
- * Shopping cart tab
+ * Me tab
  */
-public class TabShoppingCartFragment extends Fragment {
+public class TabMeFragment extends Fragment {
 
 
-    public TabShoppingCartFragment() {
+
+    public TabMeFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +25,8 @@ public class TabShoppingCartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_shopping_cart, container, false);
+        return inflater.inflate(R.layout.fragment_tab_me, container, false);
     }
+
 
 }

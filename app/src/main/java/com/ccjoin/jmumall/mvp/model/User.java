@@ -1,4 +1,4 @@
-package com.ccjoin.jmumall.entity;
+package com.ccjoin.jmumall.mvp.model;
 
 /**
  * @author liuzhang

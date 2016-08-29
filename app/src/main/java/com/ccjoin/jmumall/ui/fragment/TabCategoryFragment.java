@@ -1,4 +1,4 @@
-package com.ccjoin.jmumall.fragment;
+package com.ccjoin.jmumall.ui.fragment;
 
 
 import android.os.Bundle;

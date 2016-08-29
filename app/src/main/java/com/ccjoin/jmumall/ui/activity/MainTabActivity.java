@@ -1,5 +1,7 @@
-package com.ccjoin.jmumall.activity;
+package com.ccjoin.jmumall.ui.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,14 +9,15 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.ccjoin.jmumall.R;
 import com.ccjoin.jmumall.adapter.TabFragmentPagerAdapter;
-import com.ccjoin.jmumall.fragment.TabCategoryFragment;
-import com.ccjoin.jmumall.fragment.TabHomeFragment;
-import com.ccjoin.jmumall.fragment.TabMeFragment;
-import com.ccjoin.jmumall.fragment.TabShoppingCartFragment;
+import com.ccjoin.jmumall.ui.fragment.TabCategoryFragment;
+import com.ccjoin.jmumall.ui.fragment.TabHomeFragment;
+import com.ccjoin.jmumall.ui.fragment.TabMeFragment;
+import com.ccjoin.jmumall.ui.fragment.TabShoppingCartFragment;
 import com.ccjoin.jmumall.widget.TabItemView;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ import java.util.List;
  */
 public class MainTabActivity extends FragmentActivity implements TabItemView.TabClickListener {
 
+    private static final String TAG = MainTabActivity.class.getSimpleName();
     @BindView(R.id.pager) ViewPager mViewPager;
     @BindView(R.id.tabLayout) View tabLayout;
 
@@ -32,6 +36,10 @@ public class MainTabActivity extends FragmentActivity implements TabItemView.Tab
     private FragmentManager mFragmentManager;
     private TabFragmentPagerAdapter mTabFragmentPagerAdapter;
     private List<Fragment> mTabFragments = new ArrayList<>();
+
+    private Context mContext;
+
+    private boolean isLogin;
 
 
     @Override
@@ -42,6 +50,15 @@ public class MainTabActivity extends FragmentActivity implements TabItemView.Tab
         addFragmentToList();
         initViews();
         initTabClickListener();
+        mContext = this;
+
+    }
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
     }
 
 
@@ -93,8 +110,16 @@ public class MainTabActivity extends FragmentActivity implements TabItemView.Tab
                 mViewPager.setCurrentItem(2, false);
                 break;
             case R.id.tab_me:
-                judgeTabSame(mTabMe);
-                mViewPager.setCurrentItem(3, false);
+                if (isLogin) {
+                    judgeTabSame(mTabMe);
+                    mViewPager.setCurrentItem(3, false);
+                } else {
+                    Intent loginIntent = new Intent(mContext, LoginActivity.class);
+                    startActivityForResult(loginIntent, 100);
+                    mTabMe.setTabSelected(false);
+                }
+                break;
+            default:
                 break;
         }
     }
@@ -105,6 +130,24 @@ public class MainTabActivity extends FragmentActivity implements TabItemView.Tab
             mLastSelectedTab.setTabSelected(false);
             mLastSelectedTab = clickTab;
             mLastSelectedTab.setTabSelected(true);
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100) {
+            if (resultCode == RESULT_OK) {
+                isLogin = data.getBooleanExtra("isLogin", false);
+                if (isLogin) {
+                    judgeTabSame(mTabMe);
+                    mViewPager.setCurrentItem(3, false);
+                    Toast.makeText(MainTabActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainTabActivity.this, "登录失败，请重新打登录", Toast.LENGTH_SHORT).show();
+                }
+            }
         }
     }
 }
